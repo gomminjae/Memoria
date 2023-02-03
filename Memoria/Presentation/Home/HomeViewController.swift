@@ -12,7 +12,7 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "MEMORIA"
+        view.backgroundColor = .white
     }
     
     override func viewWillAppear(_ animated: Bool) {
