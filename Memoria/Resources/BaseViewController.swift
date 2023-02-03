@@ -11,6 +11,8 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
+        configureLayout()
 
         // Do any additional setup after loading the view.
     }

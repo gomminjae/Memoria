@@ -12,6 +12,7 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "MEMORIA"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -19,19 +20,23 @@ class HomeViewController: BaseViewController {
     }
     
     override func configureView() {
-        <#code#>
+        view.addSubview(collectionView)
     }
     
     override func configureLayout() {
-        <#code#>
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.equalTo(view)
+            $0.trailing.equalTo(view)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
     }
-    
     
     //MARK: UI👽
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
         return view
     }()
     

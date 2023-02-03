@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit 
 
-class CustomTabbarController: UITabBarController {
+class CustomTabbarController: UITabBarController, UITabBarControllerDelegate {
     
     
     var currentIndex = 0
@@ -81,8 +81,4 @@ extension CustomTabbarController: TabBarItemViewDelegate {
         view.isSelected = true
         self.currentIndex = self.tabs.firstIndex(where: {$0===view}) ?? 0
     }
-}
-
-extension CustomTabbarController: TabBarItemViewDelegate {
-    
 }
