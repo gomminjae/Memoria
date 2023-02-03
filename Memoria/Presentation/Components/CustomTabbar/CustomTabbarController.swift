@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit 
 
-class CustomTabbarController: UITabBarController, UITabBarControllerDelegate {
+class CustomTabbarController: UITabBarController {
     
     
-    var currentIndex = 0
+    var currentIndex: Int = 0 
     
     lazy var tabs: [TabBarItemView] = {
         var items = [TabBarItemView]()
@@ -23,34 +23,38 @@ class CustomTabbarController: UITabBarController, UITabBarControllerDelegate {
     
     lazy var tabModels: [BottomTabbarItem] = {
         return [
-            BottomTabbarItem(title: "Home", image: "home"),
+            BottomTabbarItem(title: "Home", image: "house"),
             BottomTabbarItem(title: "Favorites", image: "heart"),
-            BottomTabbarItem(title: "Search", image: "search"),
-            BottomTabbarItem(title: "Profile", image: "user"),
+            BottomTabbarItem(title: "Search", image: "magnifyingglass"),
+            BottomTabbarItem(title: "Profile", image: "person"),
         ]
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
         setupTabIndex()
-        self.delegate = self
+        setupVC()
         // Do any additional setup after loading the view.
     }
     
+    private func setupVC() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //1
+        let navVC = UINavigationController(rootViewController: HomeViewController())
+        navVC.title = "Memoria"
+        viewControllers = [navVC]
+    }
+    
     private func setupTabBar() {
-        tabBar.tintColor = .white
-        //tabBar.layer.cornerRadius = tabBar.frame.height * 0.5
-        //tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        //tabBar.backgroundColor = .systemIndigo
         
         tabBar.addSubview(stackView)
         
         stackView.snp.makeConstraints {
-            //$0.height.equalTo(tabBar)
-            $0.left.equalTo(tabBar).inset(15)
-            $0.right.equalTo(tabBar).inset(15)
-            $0.top.equalTo(tabBar)
-            $0.bottom.equalTo(tabBar.safeAreaLayoutGuide)
+            $0.height.equalTo(tabBar)
+            $0.leading.equalTo(tabBar).inset(15)
+            $0.trailing.equalTo(tabBar).inset(15)
+            $0.bottom.equalTo(self.view.safeAreaInsets)
         }
     }
     private func setupTabIndex() {
@@ -82,3 +86,4 @@ extension CustomTabbarController: TabBarItemViewDelegate {
         self.currentIndex = self.tabs.firstIndex(where: {$0===view}) ?? 0
     }
 }
+
