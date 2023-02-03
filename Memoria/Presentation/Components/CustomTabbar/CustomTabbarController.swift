@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit 
 
-class CustomTabbarController: UITabBarController {
+class CustomTabbarController: UIViewController {
     
     
     var currentIndex: Int = 0 
@@ -29,32 +29,51 @@ class CustomTabbarController: UITabBarController {
             BottomTabbarItem(title: "Profile", image: "person"),
         ]
     }()
+    
+    var main: UIStoryboard {
+        return UIStoryboard(name: "Main", bundle: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
         setupTabIndex()
-        setupVC()
+        //setupVC()
+        if currentIndex == 0 {
+            setupVC(HomeViewController.reusableIdentifier)
+            
+        }
+        
         // Do any additional setup after loading the view.
     }
-    
-    private func setupVC() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        
-        //1
-        let navVC = UINavigationController(rootViewController: HomeViewController())
-        navVC.title = "Memoria"
-        viewControllers = [navVC]
-    }
+
     
     private func setupTabBar() {
         
-        tabBar.addSubview(stackView)
+        view.addSubview(baseView)
+        
+        baseView.snp.makeConstraints {
+            $0.bottom.equalTo(view)
+            $0.leading.equalTo(view)
+            $0.trailing.equalTo(view)
+            $0.height.equalTo(view).multipliedBy(0.12)
+        }
+        
+        baseView.addSubview(stackView)
         
         stackView.snp.makeConstraints {
-            $0.height.equalTo(tabBar)
-            $0.leading.equalTo(tabBar).inset(15)
-            $0.trailing.equalTo(tabBar).inset(15)
-            $0.bottom.equalTo(self.view.safeAreaInsets)
+            $0.top.equalTo(baseView)
+            $0.leading.equalTo(baseView).inset(15)
+            $0.trailing.equalTo(baseView).inset(15)
+            $0.bottom.equalTo(view.safeAreaInsets)
+        }
+        
+        view.addSubview(containerView)
+        containerView.backgroundColor = .black
+        containerView.snp.makeConstraints {
+            $0.top.equalTo(view)
+            $0.leading.equalTo(view)
+            $0.trailing.equalTo(view)
+            $0.bottom.equalTo(baseView.snp.top)
         }
     }
     private func setupTabIndex() {
@@ -67,6 +86,19 @@ class CustomTabbarController: UITabBarController {
         }
     }
     
+    private func setupVC(_ name: String) {
+        let vc = main.instantiateViewController(withIdentifier: name)
+        addChild(vc)
+        containerView.addSubview(vc.view)
+        vc.view.frame = containerView.frame
+    }
+    
+    let baseView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
     let stackView: UIStackView = {
         let view = UIStackView()
         //view.backgroundColor = .systemIndigo
@@ -77,6 +109,9 @@ class CustomTabbarController: UITabBarController {
         return view
     }()
     
+    let containerView = UIView() 
+    
+    
 }
 
 extension CustomTabbarController: TabBarItemViewDelegate {
@@ -84,6 +119,13 @@ extension CustomTabbarController: TabBarItemViewDelegate {
         self.tabs[self.currentIndex].isSelected = false
         view.isSelected = true
         self.currentIndex = self.tabs.firstIndex(where: {$0===view}) ?? 0
+        
+        if currentIndex == 0 {
+            setupVC(HomeViewController.reusableIdentifier)
+        }
+        else if currentIndex == 1 {
+            setupVC("Setting")
+        }
     }
 }
 

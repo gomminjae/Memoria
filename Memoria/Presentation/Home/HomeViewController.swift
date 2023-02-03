@@ -12,7 +12,8 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        //view.backgroundColor = .blue
+        title = "Home"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +38,7 @@ class HomeViewController: BaseViewController {
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.backgroundColor = .yellow
         return view
     }()
     

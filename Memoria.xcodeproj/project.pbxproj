@@ -24,6 +24,8 @@
 		B52E86E4298BEA090072F9E2 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86E3298BEA090072F9E2 /* CustomTabbarController.swift */; };
 		B52E86E8298BFFCC0072F9E2 /* BottomTabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86E7298BFFCC0072F9E2 /* BottomTabbarItem.swift */; };
 		B52E86EA298C000A0072F9E2 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86E9298C000A0072F9E2 /* TabBarItemView.swift */; };
+		B52E86EC298D55850072F9E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52E86EB298D55850072F9E2 /* Main.storyboard */; };
+		B52E86F0298D62FF0072F9E2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86EF298D62FF0072F9E2 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		B52E86E3298BEA090072F9E2 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
 		B52E86E7298BFFCC0072F9E2 /* BottomTabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabbarItem.swift; sourceTree = "<group>"; };
 		B52E86E9298C000A0072F9E2 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
+		B52E86EB298D55850072F9E2 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B52E86EF298D62FF0072F9E2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				B52E869E298BCE6A0072F9E2 /* LaunchScreen.storyboard */,
 				B52E86A1298BCE6A0072F9E2 /* Info.plist */,
 				B52E8699298BCE6A0072F9E2 /* Memoria.xcdatamodeld */,
+				B52E86EB298D55850072F9E2 /* Main.storyboard */,
 			);
 			path = Memoria;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 		B52E86C4298BCEC30072F9E2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B52E86EE298D62F30072F9E2 /* Setting */,
 				B52E86E1298BE9AF0072F9E2 /* Components */,
 				B52E86CB298BCF310072F9E2 /* Home */,
 			);
@@ -196,6 +202,14 @@
 				B52E86E9298C000A0072F9E2 /* TabBarItemView.swift */,
 			);
 			path = CustomTabbar;
+			sourceTree = "<group>";
+		};
+		B52E86EE298D62F30072F9E2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				B52E86EF298D62FF0072F9E2 /* SettingViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B52E86EC298D55850072F9E2 /* Main.storyboard in Resources */,
 				B52E86A0298BCE6A0072F9E2 /* LaunchScreen.storyboard in Resources */,
 				B52E869D298BCE6A0072F9E2 /* Assets.xcassets in Resources */,
 			);
@@ -345,6 +360,7 @@
 				B52E86D4298BD11F0072F9E2 /* BaseViewController.swift in Sources */,
 				B52E86E4298BEA090072F9E2 /* CustomTabbarController.swift in Sources */,
 				B52E86C7298BCEE40072F9E2 /* ReusableIdentifier.swift in Sources */,
+				B52E86F0298D62FF0072F9E2 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
