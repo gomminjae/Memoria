@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class HomeViewController: BaseViewController {
+    
+    var disposeBag = DisposeBag() 
 
     override func viewDidLoad() {
         super.viewDidLoad()

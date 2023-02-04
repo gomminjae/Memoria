@@ -67,7 +67,7 @@ class CustomTabbarController: UIViewController {
         }
         
         view.addSubview(containerView)
-        containerView.backgroundColor = .black
+        containerView.backgroundColor = .blue
         containerView.snp.makeConstraints {
             $0.top.equalTo(view)
             $0.leading.equalTo(view)
