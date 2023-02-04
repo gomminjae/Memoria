@@ -51,8 +51,8 @@ class TabBarItemView: UIView {
     }
     private func configure(_ item: Any?) {
         guard let model = item as? BottomTabbarItem else { return }
-        self.titleLabel.text = model.title
         self.tabBarImage.image = UIImage(named: model.image)
+        self.titleLabel.text = model.title
         self.isSelected = model.isSelected
     }
     
@@ -69,7 +69,7 @@ class TabBarItemView: UIView {
                        options: animationOptions,
                        animations: {
             self.titleLabel.text = isSelected ? model.title : ""
-            let color: UIColor = isSelected ? .systemIndigo : .white
+            let color: UIColor = isSelected ? .systemIndigo : .brown
             self.highlightView.backgroundColor = color
             (self.superview as? UIStackView)?.layoutIfNeeded()
         },completion: nil)
@@ -82,7 +82,7 @@ class TabBarItemView: UIView {
         highlightView.addSubview(titleLabel)
         
         titleLabel.backgroundColor = .red
-        tabBarImage.backgroundColor = .black
+        //tabBarImage.backgroundColor = .black
         
         highlightView.snp.makeConstraints {
             $0.leading.equalTo(self).inset(5)
@@ -92,8 +92,10 @@ class TabBarItemView: UIView {
         }
         tabBarImage.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalTo(highlightView).inset(15)
-            $0.trailing.equalTo(titleLabel.snp.leading).offset(5)
+            $0.leading.equalTo(highlightView)
+            $0.trailing.equalTo(titleLabel.snp.leading)
+            $0.height.equalTo(34)
+            $0.width.equalTo(30)
         }
         
         titleLabel.snp.makeConstraints {
@@ -109,8 +111,9 @@ class TabBarItemView: UIView {
     }()
     let tabBarImage: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .black
+        //view.backgroundColor = .white
         view.contentMode = .scaleToFill
+        view.image = UIImage(named: "person.fill")
         return view
     }()
     let highlightView: UIView = {

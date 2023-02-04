@@ -11,7 +11,8 @@ class SettingViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
+        self.navigationController?.navigationBar.backgroundColor = .systemIndigo
         title = "Setting"
 
         // Do any additional setup after loading the view.
@@ -20,6 +21,7 @@ class SettingViewController: UITabBarController {
 
     let tableView: UITableView = {
         let view = UITableView()
+        view.backgroundColor = .black
         return view
     }()
 

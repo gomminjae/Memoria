@@ -37,7 +37,6 @@ class CustomTabbarController: UIViewController {
         super.viewDidLoad()
         setupTabBar()
         setupTabIndex()
-        //setupVC()
         if currentIndex == 0 {
             setupVC(HomeViewController.reusableIdentifier)
             
@@ -87,10 +86,9 @@ class CustomTabbarController: UIViewController {
     }
     
     private func setupVC(_ name: String) {
-        let vc = main.instantiateViewController(withIdentifier: name)
-        addChild(vc)
-        containerView.addSubview(vc.view)
-        vc.view.frame = containerView.frame
+        ViewEmbdder.embed(withIdentifier: name, parent: self, container: self.containerView) { vc in
+        }
+        print(currentIndex)
     }
     
     let baseView: UIView = {
@@ -109,7 +107,7 @@ class CustomTabbarController: UIViewController {
         return view
     }()
     
-    let containerView = UIView() 
+    let containerView = UIView()
     
     
 }
@@ -120,11 +118,13 @@ extension CustomTabbarController: TabBarItemViewDelegate {
         view.isSelected = true
         self.currentIndex = self.tabs.firstIndex(where: {$0===view}) ?? 0
         
-        if currentIndex == 0 {
+        if self.currentIndex == 0 {
             setupVC(HomeViewController.reusableIdentifier)
         }
-        else if currentIndex == 1 {
+        
+        else if self.currentIndex == 1 {
             setupVC("Setting")
+            print(self.children)
         }
     }
 }
