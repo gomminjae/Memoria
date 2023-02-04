@@ -21,6 +21,7 @@ class ViewEmbdder {
         container.addSubview(child.view)
         child.didMove(toParent: parent)
         child.view.frame = container.frame
+       
     }
     static func removeFromParent(vc: UIViewController) {
         vc.willMove(toParent: nil)
