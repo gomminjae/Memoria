@@ -11,9 +11,10 @@ class SettingViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .lightGray
         self.navigationController?.navigationBar.backgroundColor = .systemIndigo
         title = "Setting"
+        
 
         // Do any additional setup after loading the view.
     }
