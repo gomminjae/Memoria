@@ -31,6 +31,7 @@ class TabBarItemView: UIView {
         super.awakeFromNib()
         setupView()
         self.addTapGesture()
+        configure(self.item)
     }
     
     required init?(coder: NSCoder) {
@@ -46,12 +47,16 @@ class TabBarItemView: UIView {
     var item: Any? {
         didSet {
             self.configure(self.item)
+            if tabBarImage.image == nil {
+                print("image load fail")
+            }
             
         }
     }
+    
     private func configure(_ item: Any?) {
         guard let model = item as? BottomTabbarItem else { return }
-        self.tabBarImage.image = UIImage(named: model.image)
+        self.tabBarImage.image = UIImage(systemName: model.imageString)
         self.titleLabel.text = model.title
         self.isSelected = model.isSelected
     }
@@ -69,7 +74,7 @@ class TabBarItemView: UIView {
                        options: animationOptions,
                        animations: {
             self.titleLabel.text = isSelected ? model.title : ""
-            let color: UIColor = isSelected ? .systemIndigo : .brown
+            let color: UIColor = isSelected ? .systemYellow : .systemYellow
             self.highlightView.backgroundColor = color
             (self.superview as? UIStackView)?.layoutIfNeeded()
         },completion: nil)
@@ -81,43 +86,45 @@ class TabBarItemView: UIView {
         highlightView.addSubview(tabBarImage)
         highlightView.addSubview(titleLabel)
         
-        titleLabel.backgroundColor = .red
+        //titleLabel.backgroundColor = .red
         //tabBarImage.backgroundColor = .black
         
         highlightView.snp.makeConstraints {
             $0.leading.equalTo(self).inset(5)
             $0.trailing.equalTo(self)
-            $0.top.equalTo(self).inset(5)
-            $0.bottom.equalTo(self).inset(5)
+            $0.top.equalTo(self).inset(20)
+            $0.bottom.equalTo(self).inset(20)
         }
         tabBarImage.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalTo(highlightView)
+            $0.leading.equalTo(highlightView).inset(5)
             $0.trailing.equalTo(titleLabel.snp.leading)
-            $0.height.equalTo(34)
-            $0.width.equalTo(30)
+            $0.height.equalTo(40)
+            $0.width.equalTo(40)
         }
         
         titleLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.trailing.equalTo(highlightView).inset(5)
+            $0.trailing.equalTo(highlightView).inset(10)
         }
     }
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         return label
     }()
     let tabBarImage: UIImageView = {
         let view = UIImageView()
-        //view.backgroundColor = .white
+        view.backgroundColor = .clear
         view.contentMode = .scaleToFill
-        view.image = UIImage(named: "person.fill")
+        view.tintColor = .black
         return view
     }()
     let highlightView: UIView = {
         let view = UIView()
+        view.layer.cornerRadius = 15
         return view
     }()
 }

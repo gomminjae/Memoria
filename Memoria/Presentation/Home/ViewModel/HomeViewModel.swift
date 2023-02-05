@@ -7,13 +7,15 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
-protocol HomeViewModelBindable {
+
+protocol HomeViewModelType {
     associatedtype Input
     associatedtype Output
 }
 
-class HomeViewModel: HomeViewModelBindable {
+class HomeViewModel: HomeViewModelType {
     
     private let disposeBag = DisposeBag()
     
@@ -24,5 +26,8 @@ class HomeViewModel: HomeViewModelBindable {
     struct Output {
         
     }
+    init() {}
+    
+    
     
 }

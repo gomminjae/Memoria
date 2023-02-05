@@ -23,10 +23,10 @@ class CustomTabbarController: UIViewController {
     
     lazy var tabModels: [BottomTabbarItem] = {
         return [
-            BottomTabbarItem(title: "Home", image: "house"),
-            BottomTabbarItem(title: "Favorites", image: "heart"),
-            BottomTabbarItem(title: "Search", image: "magnifyingglass"),
-            BottomTabbarItem(title: "Profile", image: "person"),
+            BottomTabbarItem(title: "Home", imageString: "house"),
+            BottomTabbarItem(title: "Statistic", imageString: "chart.bar"),
+            BottomTabbarItem(title: "Search", imageString: "magnifyingglass"),
+            BottomTabbarItem(title: "Profile", imageString: "person"),
         ]
     }()
     
@@ -39,13 +39,10 @@ class CustomTabbarController: UIViewController {
         setupTabIndex()
         if currentIndex == 0 {
             setupVC(HomeViewController.reusableIdentifier)
-            
         }
         
         // Do any additional setup after loading the view.
     }
-
-    
     private func setupTabBar() {
         
         view.addSubview(baseView)
@@ -67,7 +64,7 @@ class CustomTabbarController: UIViewController {
         }
         
         view.addSubview(containerView)
-        containerView.backgroundColor = .blue
+        //containerView.backgroundColor = .blue
         containerView.snp.makeConstraints {
             $0.top.equalTo(view)
             $0.leading.equalTo(view)
@@ -93,13 +90,12 @@ class CustomTabbarController: UIViewController {
     
     let baseView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        //view.backgroundColor = .lightGray
         return view
     }()
     
     let stackView: UIStackView = {
         let view = UIStackView()
-        //view.backgroundColor = .systemIndigo
         view.axis = .horizontal
         view.alignment = .fill
         view.distribution = .equalSpacing

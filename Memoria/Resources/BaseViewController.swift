@@ -13,10 +13,12 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         configureView()
         configureLayout()
+        bindRx()
 
         // Do any additional setup after loading the view.
     }
     
+    func bindRx() {}
     func configureLayout() {}
     func configureView() {}
 

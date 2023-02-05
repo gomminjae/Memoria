@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import RxSwift
+import RxDataSources
 
 class HomeViewController: BaseViewController {
     
@@ -15,7 +16,7 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.backgroundColor = .blue
+        //view.backgroundColor = .systemBlue
         title = "Home"
     }
     
@@ -37,11 +38,17 @@ class HomeViewController: BaseViewController {
         
     }
     
+    override func bindRx() {
+        
+    }
+    
+    
+    
     //MARK: UI👽
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor = .yellow
+        view.backgroundColor = .systemYellow
         return view
     }()
     

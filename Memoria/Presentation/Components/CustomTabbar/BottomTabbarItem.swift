@@ -9,12 +9,12 @@ import UIKit
 class BottomTabbarItem {
     
     var title: String
-    var image: String
+    var imageString: String
     var isSelected: Bool
     
-    init(title: String, image: String, isSelected: Bool = false) {
+    init(title: String, imageString: String, isSelected: Bool = false) {
         self.title = title
-        self.image = image
+        self.imageString = imageString
         self.isSelected = isSelected
     }
 }
