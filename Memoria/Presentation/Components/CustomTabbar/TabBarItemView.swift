@@ -31,7 +31,6 @@ class TabBarItemView: UIView {
         super.awakeFromNib()
         setupView()
         self.addTapGesture()
-        configure(self.item)
     }
     
     required init?(coder: NSCoder) {
@@ -74,7 +73,7 @@ class TabBarItemView: UIView {
                        options: animationOptions,
                        animations: {
             self.titleLabel.text = isSelected ? model.title : ""
-            let color: UIColor = isSelected ? .systemYellow : .systemYellow
+            let color: UIColor = isSelected ? .lightGray : .white
             self.highlightView.backgroundColor = color
             (self.superview as? UIStackView)?.layoutIfNeeded()
         },completion: nil)
@@ -86,9 +85,6 @@ class TabBarItemView: UIView {
         highlightView.addSubview(tabBarImage)
         highlightView.addSubview(titleLabel)
         
-        //titleLabel.backgroundColor = .red
-        //tabBarImage.backgroundColor = .black
-        
         highlightView.snp.makeConstraints {
             $0.leading.equalTo(self).inset(5)
             $0.trailing.equalTo(self)
@@ -97,7 +93,7 @@ class TabBarItemView: UIView {
         }
         tabBarImage.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalTo(highlightView).inset(5)
+            $0.leading.equalTo(highlightView).inset(10)
             $0.trailing.equalTo(titleLabel.snp.leading)
             $0.height.equalTo(40)
             $0.width.equalTo(40)
@@ -112,7 +108,7 @@ class TabBarItemView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         return label
     }()
     let tabBarImage: UIImageView = {
