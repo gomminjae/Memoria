@@ -25,5 +25,4 @@ class CoreDataModel {
     private let disposeBag = DisposeBag()
     
     
-    
 }

@@ -53,7 +53,7 @@ class CustomTabbarController: UIViewController {
             $0.trailing.equalTo(view)
             $0.height.equalTo(view).multipliedBy(0.12)
         }
-        
+
         baseView.addSubview(stackView)
         
         stackView.snp.makeConstraints {

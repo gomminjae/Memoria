@@ -73,7 +73,7 @@ class TabBarItemView: UIView {
                        options: animationOptions,
                        animations: {
             self.titleLabel.text = isSelected ? model.title : ""
-            let color: UIColor = isSelected ? .lightGray : .white
+            let color: UIColor = isSelected ? .systemYellow : .white
             self.highlightView.backgroundColor = color
             (self.superview as? UIStackView)?.layoutIfNeeded()
         },completion: nil)

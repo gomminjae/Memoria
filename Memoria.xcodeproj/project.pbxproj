@@ -11,6 +11,8 @@
 		B5048294298E91EB00011316 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = B5048293298E91EB00011316 /* RxDataSources */; };
 		B5048296298F729800011316 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5048295298F729800011316 /* CoreDataModel.swift */; };
 		B5048298298F735D00011316 /* Memoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5048297298F735D00011316 /* Memoria.swift */; };
+		B504829B298FE01200011316 /* CoreDataRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B504829A298FE01200011316 /* CoreDataRepositoryType.swift */; };
+		B504829D298FE05A00011316 /* MemoriaUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B504829C298FE05A00011316 /* MemoriaUseCase.swift */; };
 		B52E8691298BCE6A0072F9E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E8690298BCE6A0072F9E2 /* AppDelegate.swift */; };
 		B52E8693298BCE6A0072F9E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E8692298BCE6A0072F9E2 /* SceneDelegate.swift */; };
 		B52E869B298BCE6A0072F9E2 /* Memoria.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B52E8699298BCE6A0072F9E2 /* Memoria.xcdatamodeld */; };
@@ -57,6 +59,8 @@
 /* Begin PBXFileReference section */
 		B5048295298F729800011316 /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		B5048297298F735D00011316 /* Memoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoria.swift; sourceTree = "<group>"; };
+		B504829A298FE01200011316 /* CoreDataRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepositoryType.swift; sourceTree = "<group>"; };
+		B504829C298FE05A00011316 /* MemoriaUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaUseCase.swift; sourceTree = "<group>"; };
 		B52E868D298BCE6A0072F9E2 /* Memoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52E8690298BCE6A0072F9E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B52E8692298BCE6A0072F9E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 		B504828C298E502D00011316 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				B504829C298FE05A00011316 /* MemoriaUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 		B504828D298E503600011316 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				B504829A298FE01200011316 /* CoreDataRepositoryType.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -185,6 +191,14 @@
 			children = (
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		B5048299298FDA4200011316 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B52E86C5298BCECD0072F9E2 /* Extension */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B52E8684298BCE6A0072F9E2 = {
@@ -210,11 +224,11 @@
 		B52E868F298BCE6A0072F9E2 /* Memoria */ = {
 			isa = PBXGroup;
 			children = (
+				B5048299298FDA4200011316 /* Utils */,
 				B504828A298E4FFE00011316 /* Data */,
 				B5048289298E4FE200011316 /* Domain */,
 				B5048288298E4F9700011316 /* Application */,
 				B52E86F1298E382E0072F9E2 /* Coordinator */,
-				B52E86C5298BCECD0072F9E2 /* Extension */,
 				B52E86C4298BCEC30072F9E2 /* Presentation */,
 				B52E86C3298BCEBC0072F9E2 /* Resources */,
 				B52E869E298BCE6A0072F9E2 /* LaunchScreen.storyboard */,
@@ -274,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				B5048287298E4D3200011316 /* ViewModel */,
-				B52E86F6298E47EA0072F9E2 /* Model */,
 				B52E86CC298BCF420072F9E2 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -313,13 +326,6 @@
 				B52E86F2298E38510072F9E2 /* ViewEmbdder.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		B52E86F6298E47EA0072F9E2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,6 +478,7 @@
 				B52E869B298BCE6A0072F9E2 /* Memoria.xcdatamodeld in Sources */,
 				B5048298298F735D00011316 /* Memoria.swift in Sources */,
 				B52E86F5298E42F20072F9E2 /* SettingCell.swift in Sources */,
+				B504829D298FE05A00011316 /* MemoriaUseCase.swift in Sources */,
 				B52E86CA298BCF220072F9E2 /* UIColor+extension.swift in Sources */,
 				B52E86EA298C000A0072F9E2 /* TabBarItemView.swift in Sources */,
 				B52E8693298BCE6A0072F9E2 /* SceneDelegate.swift in Sources */,
@@ -482,6 +489,7 @@
 				B52E86F3298E38510072F9E2 /* ViewEmbdder.swift in Sources */,
 				B52E86F8298E47FA0072F9E2 /* HomeViewModel.swift in Sources */,
 				B52E86F0298D62FF0072F9E2 /* SettingViewController.swift in Sources */,
+				B504829B298FE01200011316 /* CoreDataRepositoryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

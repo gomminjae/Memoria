@@ -35,7 +35,6 @@ class HomeViewController: BaseViewController {
             $0.trailing.equalTo(view)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
-        
     }
     
     override func bindRx() {
