@@ -25,8 +25,8 @@ class CustomTabbarController: UIViewController {
         return [
             BottomTabbarItem(title: "Home", imageString: "house"),
             BottomTabbarItem(title: "Statistic", imageString: "chart.bar"),
-            BottomTabbarItem(title: "Search", imageString: "magnifyingglass"),
-            BottomTabbarItem(title: "Profile", imageString: "person"),
+            BottomTabbarItem(title: "Calendar", imageString: "calendar"),
+            BottomTabbarItem(title: "Setting", imageString: "gear"),
         ]
     }()
     

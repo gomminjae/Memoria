@@ -38,6 +38,8 @@
 		B52E86FF298E48190072F9E2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B52E86FE298E48190072F9E2 /* RxRelay */; };
 		B52E8701298E48190072F9E2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B52E8700298E48190072F9E2 /* RxSwift */; };
 		B5F13FDE29925D0D00FDF525 /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F13FDD29925D0D00FDF525 /* EmptyDataView.swift */; };
+		B5F13FE329929BC500FDF525 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F13FE229929BC500FDF525 /* HeaderView.swift */; };
+		B5F13FE62992A3DA00FDF525 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F13FE52992A3DA00FDF525 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		B52E86F4298E42F20072F9E2 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		B52E86F7298E47FA0072F9E2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B5F13FDD29925D0D00FDF525 /* EmptyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
+		B5F13FE229929BC500FDF525 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		B5F13FE52992A3DA00FDF525 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +302,8 @@
 		B52E86E1298BE9AF0072F9E2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B5F13FE42992A3CD00FDF525 /* CalendarView */,
+				B5F13FE129929BA000FDF525 /* HeaderView */,
 				B5F13FDC29925CFD00FDF525 /* NoDataView */,
 				B52E86E2298BE9D50072F9E2 /* CustomTabbar */,
 			);
@@ -337,6 +343,22 @@
 				B5F13FDD29925D0D00FDF525 /* EmptyDataView.swift */,
 			);
 			path = NoDataView;
+			sourceTree = "<group>";
+		};
+		B5F13FE129929BA000FDF525 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				B5F13FE229929BC500FDF525 /* HeaderView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		B5F13FE42992A3CD00FDF525 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				B5F13FE52992A3DA00FDF525 /* CalendarView.swift */,
+			);
+			path = CalendarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +513,7 @@
 				B52E86F5298E42F20072F9E2 /* SettingCell.swift in Sources */,
 				B504829D298FE05A00011316 /* MemoriaUseCase.swift in Sources */,
 				B52E86CA298BCF220072F9E2 /* UIColor+extension.swift in Sources */,
+				B5F13FE62992A3DA00FDF525 /* CalendarView.swift in Sources */,
 				B52E86EA298C000A0072F9E2 /* TabBarItemView.swift in Sources */,
 				B52E8693298BCE6A0072F9E2 /* SceneDelegate.swift in Sources */,
 				B52E86CD298BCF420072F9E2 /* HomeViewController.swift in Sources */,
@@ -498,6 +521,7 @@
 				B52E86D4298BD11F0072F9E2 /* BaseViewController.swift in Sources */,
 				B52E86E4298BEA090072F9E2 /* CustomTabbarController.swift in Sources */,
 				B52E86C7298BCEE40072F9E2 /* ReusableIdentifier.swift in Sources */,
+				B5F13FE329929BC500FDF525 /* HeaderView.swift in Sources */,
 				B52E86F3298E38510072F9E2 /* ViewEmbdder.swift in Sources */,
 				B52E86F8298E47FA0072F9E2 /* HomeViewModel.swift in Sources */,
 				B52E86F0298D62FF0072F9E2 /* SettingViewController.swift in Sources */,
