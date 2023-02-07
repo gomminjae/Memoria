@@ -37,6 +37,7 @@
 		B52E86FD298E48190072F9E2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B52E86FC298E48190072F9E2 /* RxCocoa */; };
 		B52E86FF298E48190072F9E2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B52E86FE298E48190072F9E2 /* RxRelay */; };
 		B52E8701298E48190072F9E2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B52E8700298E48190072F9E2 /* RxSwift */; };
+		B5F13FDE29925D0D00FDF525 /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F13FDD29925D0D00FDF525 /* EmptyDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		B52E86F2298E38510072F9E2 /* ViewEmbdder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEmbdder.swift; sourceTree = "<group>"; };
 		B52E86F4298E42F20072F9E2 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		B52E86F7298E47FA0072F9E2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B5F13FDD29925D0D00FDF525 /* EmptyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 		B52E86E1298BE9AF0072F9E2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B5F13FDC29925CFD00FDF525 /* NoDataView */,
 				B52E86E2298BE9D50072F9E2 /* CustomTabbar */,
 			);
 			path = Components;
@@ -326,6 +329,14 @@
 				B52E86F2298E38510072F9E2 /* ViewEmbdder.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B5F13FDC29925CFD00FDF525 /* NoDataView */ = {
+			isa = PBXGroup;
+			children = (
+				B5F13FDD29925D0D00FDF525 /* EmptyDataView.swift */,
+			);
+			path = NoDataView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,6 +494,7 @@
 				B52E86EA298C000A0072F9E2 /* TabBarItemView.swift in Sources */,
 				B52E8693298BCE6A0072F9E2 /* SceneDelegate.swift in Sources */,
 				B52E86CD298BCF420072F9E2 /* HomeViewController.swift in Sources */,
+				B5F13FDE29925D0D00FDF525 /* EmptyDataView.swift in Sources */,
 				B52E86D4298BD11F0072F9E2 /* BaseViewController.swift in Sources */,
 				B52E86E4298BEA090072F9E2 /* CustomTabbarController.swift in Sources */,
 				B52E86C7298BCEE40072F9E2 /* ReusableIdentifier.swift in Sources */,
