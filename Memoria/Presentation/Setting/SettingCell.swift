@@ -10,27 +10,39 @@ import SnapKit
 
 class SettingCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     private func setupView() {
-        addSubview(titleLabel)
+        
+        addSubview(baseView)
+        baseView.snp.makeConstraints {
+            $0.top.equalTo(self)
+            $0.leading.equalTo(self)
+            $0.trailing.equalTo(self)
+            $0.bottom.equalTo(self)
+        }
+        baseView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
-            $0.centerY.equalTo(self)
             $0.leading.equalTo(self).inset(20)
         }
     }
     
+    let baseView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemYellow
+        return view
+    }()
+    
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .white
         label.text = "Hello world!"
         return label
     }()

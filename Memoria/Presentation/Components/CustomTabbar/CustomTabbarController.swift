@@ -64,7 +64,6 @@ class CustomTabbarController: UIViewController {
         }
         
         view.addSubview(containerView)
-        //containerView.backgroundColor = .blue
         containerView.snp.makeConstraints {
             $0.top.equalTo(view)
             $0.leading.equalTo(view)
@@ -118,7 +117,7 @@ extension CustomTabbarController: TabBarItemViewDelegate {
             setupVC(HomeViewController.reusableIdentifier)
         }
         
-        else if self.currentIndex == 1 {
+        else if self.currentIndex == 3 {
             setupVC("Setting")
             print(self.children)
         }
