@@ -10,19 +10,36 @@ import SnapKit
 import RxSwift
 import RxDataSources
 
-enum Section {
-    case calendar
-    case memoria
+struct SectionData {
+    var header: UIView
+    var items: [Item]
+}
+extension SectionData: SectionModelType {
+    typealias Item = Memoria
+    
+    init(original: SectionData, items: [Item]) {
+        self = original
+        self.items = items
+    }
 }
 
 class HomeViewController: BaseViewController {
     
+    
     var disposeBag = DisposeBag()
+    
+    let viewModel = HomeViewModel()
+    
+    
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.backgroundColor = .systemBlue
-        title = "Home"
+        collectionView.register(MemoriaCell.self, forCellWithReuseIdentifier: MemoriaCell.reusableIdentifier)
+        configureNavBar()
+        title = ""
+        bindRx()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,69 +57,59 @@ class HomeViewController: BaseViewController {
             $0.trailing.equalTo(view)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
-        generateCompositionalLayout()
+       
+    }
+    private func configureNavBar() {
+        self.navigationItem.rightBarButtonItem = profileButton
     }
     
-    override func bindRx() {
+    
+    private func bindRx() {
+        
+  
+        
+        profileButton.rx.tap
+            .bind {
+                print("tapped")
+            }
+            .disposed(by: disposeBag)
         
     }
     
     
     
+    
     //MARK: UI👽
-    let collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor = .systemYellow
+        layout.scrollDirection = .vertical
+        layout.estimatedItemSize = CGSize(width: self.view.bounds.width-10, height: 80)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .offWhite
+        collectionView.register(CalendarView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CalendarView.reusableIdentifier)
         //view.dataSource = self
         //view.delegate = self
-        return view
+        return  collectionView
+    }()
+    
+    let profileButton: UIBarButtonItem = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "person.fill"), for: .normal)
+        button.tintColor = .systemYellow
+        button.frame = CGRectMake(0, 0, 50, 50)
+        return UIBarButtonItem(customView: button)
     }()
 }
 
 extension HomeViewController {
     
-    
-    func setupCalendarSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1/4))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        return section
-    }
-    func setupMemoriaSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1))
-        
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1/3))
-        
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-        
-        let section = NSCollectionLayoutSection(group: group)
-        return section
-    }
-    
-    func generateCompositionalLayout() {
-        let layout = UICollectionViewCompositionalLayout { sectionIndex, env in
-            switch sectionIndex {
-            case 0:
-                return self.setupCalendarSection()
-            default:
-                return self.setupMemoriaSection()
-            }
-        }
-        collectionView.setCollectionViewLayout(layout, animated: true)
-    }
+//    private func generateLayout() -> UICollectionViewLayout {
+//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+//        let groupSize
+//    }
+
 }
+

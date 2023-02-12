@@ -1,14 +1,14 @@
 //
-//  HeaderView.swift
+//  CalendarCell.swift
 //  Memoria
 //
-//  Created by 권민재 on 2023/02/07.
+//  Created by 권민재 on 2023/02/12.
 //
 
 import UIKit
 import SnapKit
 
-class HeaderView: UICollectionReusableView {
+class CalendarCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,19 +18,13 @@ class HeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let baseView: UIView = {
-        let view = UIView()
-        return view
-    }()
-    
-    let nameLabel: UILabel = {
+    let dayLabel: UILabel = {
         let label = UILabel()
         return label
     }()
     
-    
-    
-    
-    
-    
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
 }

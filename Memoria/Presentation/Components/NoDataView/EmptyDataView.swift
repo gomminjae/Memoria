@@ -12,6 +12,7 @@ class EmptyDataView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        print("init")
         setupView()
     }
     
@@ -21,6 +22,7 @@ class EmptyDataView: UIView {
     
     
     private func setupView() {
+        backgroundColor = .white
         addSubview(baseView)
         baseView.addSubview(titleLabel)
         baseView.addSubview(subTitleLabel)
@@ -38,17 +40,19 @@ class EmptyDataView: UIView {
     //MARK: UI
     let baseView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemYellow
+        view.backgroundColor = .white
         return view
     }()
     
     let titleLabel: UILabel = {
         let label = UILabel()
+        label.text = "아직 추가된 데이터가 없읍니다"
         return label
     }()
     
     let subTitleLabel: UILabel = {
         let label = UILabel()
+        label.text = "데이터를 추가해 보기겠읍니까?"
         return label
     }()
     

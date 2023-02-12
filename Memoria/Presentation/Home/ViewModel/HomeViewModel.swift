@@ -7,25 +7,31 @@
 
 import Foundation
 import RxSwift
-import RxCocoa
 
 
-protocol HomeViewModelType {
+protocol ViewModelType {
     associatedtype Input
     associatedtype Output
 }
 
-class HomeViewModel: HomeViewModelType {
+protocol HomeViewModelType {
+    var memoriaList: BehaviorSubject<[Memoria]> { get }
+    var dateState: Observable<[Bool]> { get }
+
+}
+
+class HomeViewModel {
     
-    private let disposeBag = DisposeBag()
+    let dummyList = Observable.just([
+        Memoria(title: "Hello world!", content: "Let's Swift🍎"),
+        Memoria(title: "Hello world!", content: "Let's Swift🍎"),
+        Memoria(title: "Hello world!", content: "Let's Swift🍎"),
+        Memoria(title: "Hello world!", content: "Let's Swift🍎")
+    ])
     
-    struct Input {
-        
-    }
+    var disposeBag = DisposeBag()
     
-    struct Output {
-        
-    }
+  
     init() {}
     
     
