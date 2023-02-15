@@ -10,7 +10,6 @@ import SnapKit
 
 class CustomTabbarController: UIViewController {
     
-    
     var currentIndex: Int = 0 
     
     lazy var tabs: [TabBarItemView] = {
@@ -24,8 +23,8 @@ class CustomTabbarController: UIViewController {
     lazy var tabModels: [BottomTabbarItem] = {
         return [
             BottomTabbarItem(title: "Home", imageString: "house"),
-            BottomTabbarItem(title: "Statistic", imageString: "chart.bar"),
             BottomTabbarItem(title: "Calendar", imageString: "calendar"),
+            BottomTabbarItem(title: "Profile", imageString: "person"),
             BottomTabbarItem(title: "Setting", imageString: "gear"),
         ]
     }()
@@ -103,8 +102,6 @@ class CustomTabbarController: UIViewController {
     }()
     
     let containerView = UIView()
-    
-    
 }
 
 extension CustomTabbarController: TabBarItemViewDelegate {
@@ -115,6 +112,9 @@ extension CustomTabbarController: TabBarItemViewDelegate {
         
         if self.currentIndex == 0 {
             setupVC(HomeViewController.reusableIdentifier)
+        }
+        else if self.currentIndex  == 2 {
+            setupVC("profile")
         }
         
         else if self.currentIndex == 3 {

@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxDataSources
+import FSCalendar
 
 struct SectionData {
     var header: UIView
@@ -24,15 +25,8 @@ extension SectionData: SectionModelType {
 }
 
 class HomeViewController: BaseViewController {
-    
-    
     var disposeBag = DisposeBag()
-    
     let viewModel = HomeViewModel()
-    
-    
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +35,7 @@ class HomeViewController: BaseViewController {
         title = ""
         bindRx()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -66,19 +61,14 @@ class HomeViewController: BaseViewController {
     
     private func bindRx() {
         
-  
-        
-        profileButton.rx.tap
-            .bind {
-                print("tapped")
+        viewModel.dummyList
+            .bind(to: collectionView.rx.items(cellIdentifier: MemoriaCell.reusableIdentifier,cellType: MemoriaCell.self)) { index, model, cell in
+                cell.titleLabel.text = model.title
+                cell.contentLabel.text = model.content
             }
             .disposed(by: disposeBag)
         
     }
-    
-    
-    
-    
     //MARK: UI👽
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
