@@ -19,7 +19,6 @@ class ProfileViewController: BaseViewController {
     override func configureView() {
         
     }
-    
     override func configureLayout() {
         
     }
