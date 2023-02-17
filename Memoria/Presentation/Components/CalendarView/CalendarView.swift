@@ -122,6 +122,7 @@ class CalendarView: UICollectionReusableView {
         layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(CalendarCell.self, forCellWithReuseIdentifier: CalendarCell.reusableIdentifier)
+        view.showsHorizontalScrollIndicator = false
         
         return view
     }()

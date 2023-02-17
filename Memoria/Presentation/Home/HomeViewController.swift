@@ -103,6 +103,7 @@ class HomeViewController: BaseViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .offWhite
         collectionView.register(CalendarView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CalendarView.reusableIdentifier)
+        collectionView.showsVerticalScrollIndicator = false
         //view.dataSource = self
         //view.delegate = self
         return  collectionView

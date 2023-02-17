@@ -41,6 +41,8 @@
 		B5488A43299A0132001AF114 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = B5488A42299A0132001AF114 /* FSCalendar */; };
 		B5488A46299A07FA001AF114 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5488A45299A07FA001AF114 /* ProfileViewController.swift */; };
 		B5488A48299F5B72001AF114 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5488A47299F5B72001AF114 /* ProfileViewModel.swift */; };
+		B5488A4C299F6A69001AF114 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5488A4B299F6A69001AF114 /* CalendarViewController.swift */; };
+		B5488A4E299F6A8C001AF114 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5488A4D299F6A8C001AF114 /* CalendarViewModel.swift */; };
 		B56A2BD329961E8600829804 /* MemoriaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A2BD229961E8600829804 /* MemoriaCell.swift */; };
 		B5F13FDE29925D0D00FDF525 /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F13FDD29925D0D00FDF525 /* EmptyDataView.swift */; };
 		B5F13FE329929BC500FDF525 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F13FE229929BC500FDF525 /* CalendarView.swift */; };
@@ -95,6 +97,8 @@
 		B5471D6D2997E82800838140 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		B5488A45299A07FA001AF114 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B5488A47299F5B72001AF114 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		B5488A4B299F6A69001AF114 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		B5488A4D299F6A8C001AF114 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		B56A2BD229961E8600829804 /* MemoriaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaCell.swift; sourceTree = "<group>"; };
 		B5F13FDD29925D0D00FDF525 /* EmptyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
 		B5F13FE229929BC500FDF525 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 		B52E86C4298BCEC30072F9E2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B5488A49299F6A45001AF114 /* Calendar */,
 				B5488A44299A07AA001AF114 /* Profile */,
 				B5471D6A29978A3C00838140 /* Edit */,
 				B52E86EE298D62F30072F9E2 /* Setting */,
@@ -345,6 +350,15 @@
 				B5488A47299F5B72001AF114 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		B5488A49299F6A45001AF114 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				B5488A4B299F6A69001AF114 /* CalendarViewController.swift */,
+				B5488A4D299F6A8C001AF114 /* CalendarViewModel.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		B56A2BCF29961E6F00829804 /* Cells */ = {
@@ -523,6 +537,7 @@
 				B52E869B298BCE6A0072F9E2 /* Memoria.xcdatamodeld in Sources */,
 				B5048298298F735D00011316 /* Memoria.swift in Sources */,
 				B56A2BD329961E8600829804 /* MemoriaCell.swift in Sources */,
+				B5488A4C299F6A69001AF114 /* CalendarViewController.swift in Sources */,
 				B52AFFD3299935BA008A330C /* CoreDataManager.swift in Sources */,
 				B5488A48299F5B72001AF114 /* ProfileViewModel.swift in Sources */,
 				B52E86F5298E42F20072F9E2 /* SettingCell.swift in Sources */,
@@ -533,6 +548,7 @@
 				B52E86CD298BCF420072F9E2 /* HomeViewController.swift in Sources */,
 				B5F13FDE29925D0D00FDF525 /* EmptyDataView.swift in Sources */,
 				B52E86D4298BD11F0072F9E2 /* BaseViewController.swift in Sources */,
+				B5488A4E299F6A8C001AF114 /* CalendarViewModel.swift in Sources */,
 				B52E86E4298BEA090072F9E2 /* CustomTabbarController.swift in Sources */,
 				B5488A46299A07FA001AF114 /* ProfileViewController.swift in Sources */,
 				B52E86C7298BCEE40072F9E2 /* ReusableIdentifier.swift in Sources */,

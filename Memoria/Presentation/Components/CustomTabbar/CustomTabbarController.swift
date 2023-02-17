@@ -113,6 +113,9 @@ extension CustomTabbarController: TabBarItemViewDelegate {
         if self.currentIndex == 0 {
             setupVC(HomeViewController.reusableIdentifier)
         }
+        else if self.currentIndex == 1 {
+            setupVC("calendar")
+        }
         else if self.currentIndex  == 2 {
             setupVC("profile")
         }
