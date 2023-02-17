@@ -12,6 +12,8 @@ class CalendarView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .systemPink
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -22,15 +24,16 @@ class CalendarView: UICollectionReusableView {
         addSubview(baseView)
         
         baseView.snp.makeConstraints {
-            $0.top.equalTo(self)
-            $0.leading.equalTo(self)
-            $0.trailing.equalTo(self)
-            $0.height.equalTo(self.frame.height / 4)
+            $0.top.equalTo(self).inset(20)
+            $0.leading.equalTo(self).inset(10)
+            $0.trailing.equalTo(self).inset(10)
+            $0.bottom.equalTo(self).inset(20)
         }
     }
     
     let baseView: UIView = {
         let view = UIView()
+        view.backgroundColor = .black
         return view
     }()
     

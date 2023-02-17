@@ -25,8 +25,17 @@ extension SectionData: SectionModelType {
 }
 
 class HomeViewController: BaseViewController {
+    
     var disposeBag = DisposeBag()
     let viewModel = HomeViewModel()
+    
+    let dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel<String,Memoria>>(configureCell: {(dataSource, collectionView, indexPath, item) -> UICollectionViewCell in
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MemoriaCell.reusableIdentifier, for: indexPath) as? MemoriaCell else { return UICollectionViewCell() }
+        cell.titleLabel.text = item.title
+        cell.contentLabel.text = item.content
+        return cell
+    })
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +70,28 @@ class HomeViewController: BaseViewController {
     
     private func bindRx() {
         
-        viewModel.dummyList
-            .bind(to: collectionView.rx.items(cellIdentifier: MemoriaCell.reusableIdentifier,cellType: MemoriaCell.self)) { index, model, cell in
-                cell.titleLabel.text = model.title
-                cell.contentLabel.text = model.content
+        dataSource.configureSupplementaryView = { (dataSource, collectionView, kind, indexPath) -> UICollectionReusableView in
+            if kind == UICollectionView.elementKindSectionHeader {
+                guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CalendarView.reusableIdentifier, for: indexPath) as? CalendarView else { return UICollectionReusableView() }
+                
+                return header
+            }else {
+                return UICollectionReusableView()
             }
+            
+        }
+        viewModel.dummyList
+            .map { itemViewModel -> [SectionModel<String, Memoria>] in
+                return [SectionModel(model: "", items: itemViewModel)]
+            }
+            .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        collectionView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+       
+    
+        
         
     }
     //MARK: UI👽
@@ -93,13 +118,11 @@ class HomeViewController: BaseViewController {
     }()
 }
 
-extension HomeViewController {
-    
-//    private func generateLayout() -> UICollectionViewLayout {
-//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//        let groupSize
-//    }
 
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 200)
+    }
 }
+
 

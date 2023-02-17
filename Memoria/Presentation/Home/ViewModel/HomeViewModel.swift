@@ -26,7 +26,13 @@ class HomeViewModel {
         Memoria(title: "Hello world!", content: "Let's Swift🍎"),
         Memoria(title: "Hello world!", content: "Let's Swift🍎"),
         Memoria(title: "Hello world!", content: "Let's Swift🍎"),
-        Memoria(title: "Hello world!", content: "Let's Swift🍎")
+        Memoria(title: "Hello world!", content: "Let's Swift🍎"),
+        Memoria(title: "Hello world!", content: "Let's Swift🍎"),
+        Memoria(title: "Hello world!", content: "Let's Swift🍎"),
+        Memoria(title: "Hello world!", content: "Let's Swift🍎"),
+        Memoria(title: "Hello world!", content: "Let's Swift🍎"),
+        Memoria(title: "Hello world!", content: "Let's Swift🍎"),
+        Memoria(title: "Hello world!", content: "Let's Swift🍎"),
     ])
     
     var disposeBag = DisposeBag()
