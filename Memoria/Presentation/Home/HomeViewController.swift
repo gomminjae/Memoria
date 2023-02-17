@@ -78,7 +78,6 @@ class HomeViewController: BaseViewController {
             }else {
                 return UICollectionReusableView()
             }
-            
         }
         viewModel.dummyList
             .map { itemViewModel -> [SectionModel<String, Memoria>] in
@@ -121,7 +120,7 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        return CGSize(width: view.frame.width, height: 160)
     }
 }
 
