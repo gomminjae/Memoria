@@ -110,19 +110,15 @@ extension CustomTabbarController: TabBarItemViewDelegate {
         view.isSelected = true
         self.currentIndex = self.tabs.firstIndex(where: {$0===view}) ?? 0
         
-        if self.currentIndex == 0 {
+        switch currentIndex {
+        case 0:
             setupVC(HomeViewController.reusableIdentifier)
-        }
-        else if self.currentIndex == 1 {
+        case 1:
             setupVC("calendar")
-        }
-        else if self.currentIndex  == 2 {
+        case 2:
             setupVC("profile")
-        }
-        
-        else if self.currentIndex == 3 {
+        default:
             setupVC("Setting")
-            print(self.children)
         }
     }
 }
