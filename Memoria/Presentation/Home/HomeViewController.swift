@@ -39,10 +39,17 @@ class HomeViewController: BaseViewController {
     }
     
     override func configureView() {
+        collectionView.addSubview(floatingAddButton)
         view.addSubview(collectionView)
     }
     
     override func configureLayout() {
+        
+        floatingAddButton.snp.makeConstraints {
+            $0.trailing.equalTo(view).inset(20)
+            $0.bottom.equalTo(view).inset(10)
+            $0.height.equalTo(60)
+        }
         collectionView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.equalTo(view)
@@ -80,12 +87,19 @@ class HomeViewController: BaseViewController {
         collectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
+        floatingAddButton.rx
+            .tap
+            .bind {
+                self.present(EditViewController(), animated: true)
+            }
+            .disposed(by: disposeBag)
+        
     }
     //MARK: UI👽
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.estimatedItemSize = CGSize(width: self.view.bounds.width-10, height: 80)
+        layout.estimatedItemSize = CGSize(width: self.view.bounds.width / 2 - 30, height: 250)
         layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -103,6 +117,17 @@ class HomeViewController: BaseViewController {
         button.backgroundColor = .systemYellow
         button.frame = CGRectMake(0, 0, 40, 40)
         return UIBarButtonItem(customView: button)
+    }()
+    
+    let floatingAddButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "plus.app"), for: .normal)
+        button.setTitle("Add Memoria", for: .normal)
+        button.tintColor = .systemYellow
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .offWhite.withAlphaComponent(1)
+        button.layer.cornerRadius = 20
+        return button
     }()
 }
 
