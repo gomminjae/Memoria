@@ -12,6 +12,13 @@ import RxDataSources
 import SnapKit
 
 class CalendarViewController: BaseViewController {
+    
+    private var disposeBag = DisposeBag()
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +53,11 @@ class CalendarViewController: BaseViewController {
         view.backgroundColor = .systemYellow
         return view
     }()
-    
-    
+}
 
-   
-
+extension CalendarViewController {
+    
+    private func generateLayout() -> UICollectionViewLayout {
+        return UICollectionViewLayout()
+    }
 }

@@ -11,18 +11,6 @@ import RxSwift
 import RxDataSources
 import FSCalendar
 
-struct SectionData {
-    var header: UIView
-    var items: [Item]
-}
-extension SectionData: SectionModelType {
-    typealias Item = Memoria
-    
-    init(original: SectionData, items: [Item]) {
-        self = original
-        self.items = items
-    }
-}
 
 class HomeViewController: BaseViewController {
     
@@ -79,18 +67,18 @@ class HomeViewController: BaseViewController {
                 return UICollectionReusableView()
             }
         }
+        
         viewModel.dummyList
             .map { itemViewModel -> [SectionModel<String, Memoria>] in
+                
                 return [SectionModel(model: "", items: itemViewModel)]
             }
+            .observe(on: MainScheduler.instance)
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
         collectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
-       
-    
-        
         
     }
     //MARK: UI👽
@@ -104,16 +92,16 @@ class HomeViewController: BaseViewController {
         collectionView.backgroundColor = .offWhite
         collectionView.register(CalendarView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CalendarView.reusableIdentifier)
         collectionView.showsVerticalScrollIndicator = false
-        //view.dataSource = self
-        //view.delegate = self
         return  collectionView
     }()
     
     let profileButton: UIBarButtonItem = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "person.fill"), for: .normal)
-        button.tintColor = .systemYellow
-        button.frame = CGRectMake(0, 0, 50, 50)
+        button.tintColor = .white
+        button.layer.cornerRadius = 20
+        button.backgroundColor = .systemYellow
+        button.frame = CGRectMake(0, 0, 40, 40)
         return UIBarButtonItem(customView: button)
     }()
 }

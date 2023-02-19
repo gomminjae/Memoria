@@ -36,6 +36,7 @@
 		B52E86FD298E48190072F9E2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B52E86FC298E48190072F9E2 /* RxCocoa */; };
 		B52E86FF298E48190072F9E2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B52E86FE298E48190072F9E2 /* RxRelay */; };
 		B52E8701298E48190072F9E2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B52E8700298E48190072F9E2 /* RxSwift */; };
+		B5464F2F29A1DE9A00860CD3 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5464F2E29A1DE9A00860CD3 /* UICollectionView+Extension.swift */; };
 		B5471D6C29978A5300838140 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5471D6B29978A5300838140 /* EditViewController.swift */; };
 		B5471D6E2997E82800838140 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5471D6D2997E82800838140 /* CalendarCell.swift */; };
 		B5488A43299A0132001AF114 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = B5488A42299A0132001AF114 /* FSCalendar */; };
@@ -93,6 +94,7 @@
 		B52E86F2298E38510072F9E2 /* ViewEmbdder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEmbdder.swift; sourceTree = "<group>"; };
 		B52E86F4298E42F20072F9E2 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		B52E86F7298E47FA0072F9E2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B5464F2E29A1DE9A00860CD3 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		B5471D6B29978A5300838140 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		B5471D6D2997E82800838140 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		B5488A45299A07FA001AF114 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				B52E86C6298BCEE40072F9E2 /* ReusableIdentifier.swift */,
 				B52E86C9298BCF220072F9E2 /* UIColor+extension.swift */,
+				B5464F2E29A1DE9A00860CD3 /* UICollectionView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				B52E86D4298BD11F0072F9E2 /* BaseViewController.swift in Sources */,
 				B5488A4E299F6A8C001AF114 /* CalendarViewModel.swift in Sources */,
 				B52E86E4298BEA090072F9E2 /* CustomTabbarController.swift in Sources */,
+				B5464F2F29A1DE9A00860CD3 /* UICollectionView+Extension.swift in Sources */,
 				B5488A46299A07FA001AF114 /* ProfileViewController.swift in Sources */,
 				B52E86C7298BCEE40072F9E2 /* ReusableIdentifier.swift in Sources */,
 				B5471D6C29978A5300838140 /* EditViewController.swift in Sources */,

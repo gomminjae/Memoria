@@ -7,11 +7,16 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 
 protocol ViewModelType {
     associatedtype Input
     associatedtype Output
+    
+    var disposeBag: DisposeBag { get set }
+    
+    func transform(input: Input) -> Output
 }
 
 protocol HomeViewModelType {
@@ -20,7 +25,19 @@ protocol HomeViewModelType {
 
 }
 
-class HomeViewModel {
+class HomeViewModel: ViewModelType {
+    
+    struct Input {
+        
+    }
+    
+    struct Output {
+        
+    }
+    
+    var disposeBag = DisposeBag()
+    
+    
     
     let dummyList = Observable.just([
         Memoria(title: "Hello world!", content: "Let's Swift🍎"),
@@ -35,7 +52,9 @@ class HomeViewModel {
         Memoria(title: "Hello world!", content: "Let's Swift🍎"),
     ])
     
-    var disposeBag = DisposeBag()
+    func transform(input: Input) -> Output {
+        return Output()
+    }
     
   
     init() {}
