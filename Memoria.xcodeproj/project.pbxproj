@@ -10,11 +10,9 @@
 		B5048292298E91EB00011316 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = B5048291298E91EB00011316 /* Differentiator */; };
 		B5048294298E91EB00011316 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = B5048293298E91EB00011316 /* RxDataSources */; };
 		B5048298298F735D00011316 /* Memoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5048297298F735D00011316 /* Memoria.swift */; };
-		B504829B298FE01200011316 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B504829A298FE01200011316 /* CoreDataModel.swift */; };
-		B52AFFD3299935BA008A330C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AFFD2299935BA008A330C /* CoreDataManager.swift */; };
 		B52E8691298BCE6A0072F9E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E8690298BCE6A0072F9E2 /* AppDelegate.swift */; };
 		B52E8693298BCE6A0072F9E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E8692298BCE6A0072F9E2 /* SceneDelegate.swift */; };
-		B52E869B298BCE6A0072F9E2 /* Memoria.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B52E8699298BCE6A0072F9E2 /* Memoria.xcdatamodeld */; };
+		B52E869B298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B52E8699298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld */; };
 		B52E869D298BCE6A0072F9E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52E869C298BCE6A0072F9E2 /* Assets.xcassets */; };
 		B52E86A0298BCE6A0072F9E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52E869E298BCE6A0072F9E2 /* LaunchScreen.storyboard */; };
 		B52E86AB298BCE6A0072F9E2 /* MemoriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86AA298BCE6A0072F9E2 /* MemoriaTests.swift */; };
@@ -44,6 +42,9 @@
 		B5488A48299F5B72001AF114 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5488A47299F5B72001AF114 /* ProfileViewModel.swift */; };
 		B5488A4C299F6A69001AF114 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5488A4B299F6A69001AF114 /* CalendarViewController.swift */; };
 		B5488A4E299F6A8C001AF114 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5488A4D299F6A8C001AF114 /* CalendarViewModel.swift */; };
+		B54DB0DE29A3CB1B00F1BDBD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DB0DD29A3CB1B00F1BDBD /* CoreDataManager.swift */; };
+		B54DB0E729A3D06C00F1BDBD /* MemoriaData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DB0E529A3D06C00F1BDBD /* MemoriaData+CoreDataClass.swift */; };
+		B54DB0E829A3D06C00F1BDBD /* MemoriaData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DB0E629A3D06C00F1BDBD /* MemoriaData+CoreDataProperties.swift */; };
 		B56A2BD329961E8600829804 /* MemoriaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A2BD229961E8600829804 /* MemoriaCell.swift */; };
 		B5F13FDE29925D0D00FDF525 /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F13FDD29925D0D00FDF525 /* EmptyDataView.swift */; };
 		B5F13FE329929BC500FDF525 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F13FE229929BC500FDF525 /* CalendarView.swift */; };
@@ -68,8 +69,6 @@
 
 /* Begin PBXFileReference section */
 		B5048297298F735D00011316 /* Memoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoria.swift; sourceTree = "<group>"; };
-		B504829A298FE01200011316 /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
-		B52AFFD2299935BA008A330C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B52E868D298BCE6A0072F9E2 /* Memoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52E8690298BCE6A0072F9E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B52E8692298BCE6A0072F9E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +100,9 @@
 		B5488A47299F5B72001AF114 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		B5488A4B299F6A69001AF114 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		B5488A4D299F6A8C001AF114 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		B54DB0DD29A3CB1B00F1BDBD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B54DB0E529A3D06C00F1BDBD /* MemoriaData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoriaData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B54DB0E629A3D06C00F1BDBD /* MemoriaData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoriaData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B56A2BD229961E8600829804 /* MemoriaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaCell.swift; sourceTree = "<group>"; };
 		B5F13FDD29925D0D00FDF525 /* EmptyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
 		B5F13FE229929BC500FDF525 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -183,8 +185,10 @@
 		B504828E298E8AD200011316 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				B504829A298FE01200011316 /* CoreDataModel.swift */,
-				B52AFFD2299935BA008A330C /* CoreDataManager.swift */,
+				B54DB0DD29A3CB1B00F1BDBD /* CoreDataManager.swift */,
+				B52E8699298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld */,
+				B54DB0E529A3D06C00F1BDBD /* MemoriaData+CoreDataClass.swift */,
+				B54DB0E629A3D06C00F1BDBD /* MemoriaData+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -235,7 +239,6 @@
 				B52E86C4298BCEC30072F9E2 /* Presentation */,
 				B52E86C3298BCEBC0072F9E2 /* Resources */,
 				B52E869E298BCE6A0072F9E2 /* LaunchScreen.storyboard */,
-				B52E8699298BCE6A0072F9E2 /* Memoria.xcdatamodeld */,
 				B52E86EB298D55850072F9E2 /* Main.storyboard */,
 				B52E86A1298BCE6A0072F9E2 /* Info.plist */,
 			);
@@ -537,12 +540,13 @@
 			files = (
 				B52E86E8298BFFCC0072F9E2 /* BottomTabbarItem.swift in Sources */,
 				B52E8691298BCE6A0072F9E2 /* AppDelegate.swift in Sources */,
-				B52E869B298BCE6A0072F9E2 /* Memoria.xcdatamodeld in Sources */,
+				B52E869B298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld in Sources */,
 				B5048298298F735D00011316 /* Memoria.swift in Sources */,
 				B56A2BD329961E8600829804 /* MemoriaCell.swift in Sources */,
 				B5488A4C299F6A69001AF114 /* CalendarViewController.swift in Sources */,
-				B52AFFD3299935BA008A330C /* CoreDataManager.swift in Sources */,
+				B54DB0E829A3D06C00F1BDBD /* MemoriaData+CoreDataProperties.swift in Sources */,
 				B5488A48299F5B72001AF114 /* ProfileViewModel.swift in Sources */,
+				B54DB0E729A3D06C00F1BDBD /* MemoriaData+CoreDataClass.swift in Sources */,
 				B52E86F5298E42F20072F9E2 /* SettingCell.swift in Sources */,
 				B5471D6E2997E82800838140 /* CalendarCell.swift in Sources */,
 				B52E86CA298BCF220072F9E2 /* UIColor+extension.swift in Sources */,
@@ -556,12 +560,12 @@
 				B5464F2F29A1DE9A00860CD3 /* UICollectionView+Extension.swift in Sources */,
 				B5488A46299A07FA001AF114 /* ProfileViewController.swift in Sources */,
 				B52E86C7298BCEE40072F9E2 /* ReusableIdentifier.swift in Sources */,
+				B54DB0DE29A3CB1B00F1BDBD /* CoreDataManager.swift in Sources */,
 				B5471D6C29978A5300838140 /* EditViewController.swift in Sources */,
 				B5F13FE329929BC500FDF525 /* CalendarView.swift in Sources */,
 				B52E86F3298E38510072F9E2 /* ViewEmbdder.swift in Sources */,
 				B52E86F8298E47FA0072F9E2 /* HomeViewModel.swift in Sources */,
 				B52E86F0298D62FF0072F9E2 /* SettingViewController.swift in Sources */,
-				B504829B298FE01200011316 /* CoreDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -984,13 +988,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		B52E8699298BCE6A0072F9E2 /* Memoria.xcdatamodeld */ = {
+		B52E8699298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				B52E869A298BCE6A0072F9E2 /* Memoria.xcdatamodel */,
 			);
 			currentVersion = B52E869A298BCE6A0072F9E2 /* Memoria.xcdatamodel */;
-			path = Memoria.xcdatamodeld;
+			path = MemoriaMemoriaApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
