@@ -29,6 +29,7 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         collectionView.register(MemoriaCell.self, forCellWithReuseIdentifier: MemoriaCell.reusableIdentifier)
         configureNavBar()
+        view.backgroundColor = .offWhite
         title = ""
         bindRx()
     }
