@@ -41,9 +41,7 @@ class CoreDataManager: NSObject {
         let managedContext = CoreDataManager.shared.persistentContainer.viewContext
         
         let memoria = MemoriaData(context: managedContext)
-        memoria.title = newMemoria.title
-        memoria.content = newMemoria.content
-        memoria.date = newMemoria.date
+        
         
         do {
              try managedContext.save()
@@ -81,23 +79,23 @@ class CoreDataManager: NSObject {
         }
     }
     
-    func update(memoria: Memoria) -> (Bool,Error?) {
-        let managedContext = CoreDataManager.shared.persistentContainer.viewContext
-        
-    }
-    
-    func reset() {
-        let container = persistentContainer
-        let coordinator = container.persistentStoreCoordinator
-        
-        if let store = coordinator.destroyPersistentStore(type: NSSQLiteStoreType) {
-            do {
-                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: store.url)
-            } catch let error {
-                print(error)
-            }
-        }
-    }
+//    func update(memoria: Memoria) -> (Bool,Error?) {
+//        let managedContext = CoreDataManager.shared.persistentContainer.viewContext
+//        
+//    }
+//    
+//    func reset() {
+//        let container = persistentContainer
+//        let coordinator = container.persistentStoreCoordinator
+//        
+//        if let store = coordinator.destroyPersistentStore(type: NSSQLiteStoreType) {
+//            do {
+//                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: store.url)
+//            } catch let error {
+//                print(error)
+//            }
+//        }
+//    }
     
     
     
