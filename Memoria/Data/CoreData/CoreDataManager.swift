@@ -36,13 +36,11 @@ class CoreDataManager: NSObject {
             }
         }
     }
-    
     func create(newMemoria: Memoria) -> (Bool,Error?) {
         let managedContext = CoreDataManager.shared.persistentContainer.viewContext
         
         let memoria = MemoriaData(context: managedContext)
-        
-        
+
         do {
              try managedContext.save()
              return (true, nil)
@@ -96,9 +94,4 @@ class CoreDataManager: NSObject {
 //            }
 //        }
 //    }
-    
-    
-    
-    
-    
 }
