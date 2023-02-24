@@ -114,20 +114,22 @@ class HomeViewController: BaseViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "person.fill"), for: .normal)
         button.tintColor = .white
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = button.bounds.height / 2
         button.backgroundColor = .systemYellow
-        button.frame = CGRectMake(0, 0, 40, 40)
+        button.setPreferredSymbolConfiguration(.init(pointSize: 30), forImageIn: .normal)
         return UIBarButtonItem(customView: button)
     }()
     
     let floatingAddButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "plus.app"), for: .normal)
-        button.setTitle("Add Memoria", for: .normal)
+        button.setImage(UIImage(systemName: "plus.circle"), for: .normal)
+        //button.setTitle("Add Memoria", for: .normal)
         button.tintColor = .systemYellow
         button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .offWhite.withAlphaComponent(1)
-        button.layer.cornerRadius = 20
+        button.backgroundColor = .offWhite
+        //button.layer.borderColor = UIColor.systemYellow.cgColor
+        button.setPreferredSymbolConfiguration(.init(pointSize: 50), forImageIn: .normal)
+        button.layer.cornerRadius = 30
         return button
     }()
 }

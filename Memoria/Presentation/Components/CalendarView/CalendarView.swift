@@ -101,6 +101,7 @@ class CalendarView: UICollectionReusableView {
         let button = UIButton()
         //button.backgroundColor = .blue
         button.setImage(UIImage(systemName: "arrowshape.left.fill"), for: .normal)
+        button.setPreferredSymbolConfiguration(.init(pointSize: 30), forImageIn: .normal)
         button.tintColor = .systemYellow
         return button
     }()
@@ -111,6 +112,7 @@ class CalendarView: UICollectionReusableView {
         button.setImage(UIImage(systemName: "arrowshape.right.fill"), for: .normal)
         button.tintColor = .systemYellow
         button.contentMode = .scaleToFill
+        button.setPreferredSymbolConfiguration(.init(pointSize: 30), forImageIn: .normal)
         button.configuration?.buttonSize = .large
         return button
     }()
