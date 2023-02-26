@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		B5048292298E91EB00011316 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = B5048291298E91EB00011316 /* Differentiator */; };
 		B5048294298E91EB00011316 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = B5048293298E91EB00011316 /* RxDataSources */; };
-		B5048298298F735D00011316 /* Memoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5048297298F735D00011316 /* Memoria.swift */; };
+		B50B14E629AB7E5D006DDE28 /* Memoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B14E529AB7E5D006DDE28 /* Memoria.swift */; };
+		B50B14E929AB7E98006DDE28 /* MemoriaData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B14E729AB7E98006DDE28 /* MemoriaData+CoreDataClass.swift */; };
 		B52E8691298BCE6A0072F9E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E8690298BCE6A0072F9E2 /* AppDelegate.swift */; };
 		B52E8693298BCE6A0072F9E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E8692298BCE6A0072F9E2 /* SceneDelegate.swift */; };
 		B52E869B298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B52E8699298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld */; };
@@ -66,7 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B5048297298F735D00011316 /* Memoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoria.swift; sourceTree = "<group>"; };
+		B50B14E529AB7E5D006DDE28 /* Memoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoria.swift; sourceTree = "<group>"; };
+		B50B14E729AB7E98006DDE28 /* MemoriaData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoriaData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B52E868D298BCE6A0072F9E2 /* Memoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52E8690298BCE6A0072F9E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B52E8692298BCE6A0072F9E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,7 +175,7 @@
 		B504828B298E502200011316 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				B5048297298F735D00011316 /* Memoria.swift */,
+				B50B14E529AB7E5D006DDE28 /* Memoria.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -181,6 +183,7 @@
 		B504828E298E8AD200011316 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				B50B14E729AB7E98006DDE28 /* MemoriaData+CoreDataClass.swift */,
 				B54DB0DD29A3CB1B00F1BDBD /* CoreDataManager.swift */,
 				B52E8699298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld */,
 			);
@@ -535,10 +538,11 @@
 				B52E86E8298BFFCC0072F9E2 /* BottomTabbarItem.swift in Sources */,
 				B52E8691298BCE6A0072F9E2 /* AppDelegate.swift in Sources */,
 				B52E869B298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld in Sources */,
-				B5048298298F735D00011316 /* Memoria.swift in Sources */,
+				B50B14E629AB7E5D006DDE28 /* Memoria.swift in Sources */,
 				B56A2BD329961E8600829804 /* MemoriaCell.swift in Sources */,
 				B5488A4C299F6A69001AF114 /* CalendarViewController.swift in Sources */,
 				B5488A48299F5B72001AF114 /* ProfileViewModel.swift in Sources */,
+				B50B14E929AB7E98006DDE28 /* MemoriaData+CoreDataClass.swift in Sources */,
 				B52E86F5298E42F20072F9E2 /* SettingCell.swift in Sources */,
 				B5471D6E2997E82800838140 /* CalendarCell.swift in Sources */,
 				B52E86CA298BCF220072F9E2 /* UIColor+extension.swift in Sources */,

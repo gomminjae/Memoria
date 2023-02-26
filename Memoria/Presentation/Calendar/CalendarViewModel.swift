@@ -11,7 +11,13 @@ import RxSwift
 protocol CalendarViewModelBindable {
     var memorias: Observable<[Memoria]> { get }
 }
+protocol CalendarViewInput {
+    
+}
 
+protocol CalendarViewOutput {
+    
+}
 
 class CalendarViewModel {
     
