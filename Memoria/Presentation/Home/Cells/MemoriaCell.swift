@@ -29,6 +29,7 @@ class MemoriaCell: UICollectionViewCell {
         titleLabel.snp.makeConstraints {
             $0.centerY.equalTo(self)
             $0.leading.equalTo(self).inset(20)
+            // $0.trailing.equalTo(self)
         }
         contentLabel.snp.makeConstraints {
             $0.leading.equalTo(titleLabel.snp.trailing).offset(10)

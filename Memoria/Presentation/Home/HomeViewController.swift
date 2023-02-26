@@ -17,6 +17,7 @@ class HomeViewController: BaseViewController {
     var disposeBag = DisposeBag()
     let viewModel = HomeViewModel()
     
+    
     let dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel<String,Memoria>>(configureCell: {(dataSource, collectionView, indexPath, item) -> UICollectionViewCell in
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MemoriaCell.reusableIdentifier, for: indexPath) as? MemoriaCell else { return UICollectionViewCell() }
         cell.titleLabel.text = item.title
@@ -75,7 +76,6 @@ class HomeViewController: BaseViewController {
                 return UICollectionReusableView()
             }
         }
-        
         viewModel.dummyList
             .map { itemViewModel -> [SectionModel<String, Memoria>] in
                 
@@ -94,7 +94,6 @@ class HomeViewController: BaseViewController {
                 self.present(EditViewController(), animated: true)
             }
             .disposed(by: disposeBag)
-        
     }
     //MARK: UI👽
     lazy var collectionView: UICollectionView = {
@@ -132,6 +131,7 @@ class HomeViewController: BaseViewController {
         button.layer.cornerRadius = 30
         return button
     }()
+    
 }
 
 

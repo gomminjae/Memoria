@@ -33,8 +33,6 @@ class EmptyDataView: UIView {
             $0.trailing.equalTo(self).inset(10)
             $0.bottom.equalTo(self).inset(10)
         }
-        
-        
     }
     
     //MARK: UI

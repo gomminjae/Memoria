@@ -14,12 +14,6 @@ import SnapKit
 class CalendarViewController: BaseViewController {
     
     private var disposeBag = DisposeBag()
-    
-    
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Calendar"
@@ -39,13 +33,6 @@ class CalendarViewController: BaseViewController {
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    
-    
-    
-    
-    
-    
-    
     //MARK: UI
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
