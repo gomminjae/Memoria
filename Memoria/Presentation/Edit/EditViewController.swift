@@ -44,6 +44,7 @@ class EditViewController: BaseViewController {
         cancelButton.snp.makeConstraints {
             $0.leading.equalTo(titleLabel.snp.trailing).offset(15)
             $0.top.equalTo(titleLabel.snp.top)
+            $0.trailing.equalTo(view).inset(20)
         }
         
         completeButton.snp.makeConstraints {
@@ -86,6 +87,7 @@ class EditViewController: BaseViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "x.circle.fill"), for: .normal)
         button.tintColor = .systemYellow
+        button.setPreferredSymbolConfiguration(.init(pointSize: 30), forImageIn: .normal)
         return button
     }()
     

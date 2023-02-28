@@ -13,7 +13,10 @@ class CalendarView: UICollectionReusableView {
     
     
     let days = ["MON","TUE","WED","THU","FRI","SAT","SUN"]
+    let months = ["January","February","March", "April","May","June","July","August","September","October","November","December"]
     private var disposeBag = DisposeBag()
+    
+    var currentMonth = 1
     
     
     override init(frame: CGRect) {
@@ -68,12 +71,29 @@ class CalendarView: UICollectionReusableView {
     
     private func bindRx() {
         
+        
         Observable.of(days)
             .bind(to: datePageCollectionView.rx.items(cellIdentifier: CalendarCell.reusableIdentifier,cellType: CalendarCell.self)) { row,model,cell in
                 cell.dayLabel.text = "MON"
             }
             .disposed(by: disposeBag)
         
+        
+
+        
+        previousButton.rx.tap
+            .bind { [self] in
+                currentMonth -= 1
+                self.monthLabel.text = months[currentMonth]
+            }
+            .disposed(by: disposeBag)
+        
+        nextButton.rx.tap
+            .bind { [self] in
+                currentMonth += 1
+                self.monthLabel.text = months[currentMonth]
+            }
+            .disposed(by: disposeBag)
         
        
     }

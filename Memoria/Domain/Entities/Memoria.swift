@@ -12,6 +12,6 @@ struct Memoria {
     
     let title: String
     let content: String
-    let data: Date
-    let id: UUID
+    //let data: Date
+    //let id: UUID
 }

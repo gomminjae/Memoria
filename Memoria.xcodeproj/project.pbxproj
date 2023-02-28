@@ -10,7 +10,6 @@
 		B5048292298E91EB00011316 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = B5048291298E91EB00011316 /* Differentiator */; };
 		B5048294298E91EB00011316 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = B5048293298E91EB00011316 /* RxDataSources */; };
 		B50B14E629AB7E5D006DDE28 /* Memoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B14E529AB7E5D006DDE28 /* Memoria.swift */; };
-		B50B14E929AB7E98006DDE28 /* MemoriaData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B14E729AB7E98006DDE28 /* MemoriaData+CoreDataClass.swift */; };
 		B52E8691298BCE6A0072F9E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E8690298BCE6A0072F9E2 /* AppDelegate.swift */; };
 		B52E8693298BCE6A0072F9E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E8692298BCE6A0072F9E2 /* SceneDelegate.swift */; };
 		B52E869B298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B52E8699298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld */; };
@@ -18,7 +17,6 @@
 		B52E86A0298BCE6A0072F9E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52E869E298BCE6A0072F9E2 /* LaunchScreen.storyboard */; };
 		B52E86AB298BCE6A0072F9E2 /* MemoriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86AA298BCE6A0072F9E2 /* MemoriaTests.swift */; };
 		B52E86B5298BCE6B0072F9E2 /* MemoriaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86B4298BCE6B0072F9E2 /* MemoriaUITests.swift */; };
-		B52E86B7298BCE6B0072F9E2 /* MemoriaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86B6298BCE6B0072F9E2 /* MemoriaUITestsLaunchTests.swift */; };
 		B52E86C7298BCEE40072F9E2 /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86C6298BCEE40072F9E2 /* ReusableIdentifier.swift */; };
 		B52E86CA298BCF220072F9E2 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86C9298BCF220072F9E2 /* UIColor+extension.swift */; };
 		B52E86CD298BCF420072F9E2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E86CC298BCF420072F9E2 /* HomeViewController.swift */; };
@@ -68,7 +66,6 @@
 
 /* Begin PBXFileReference section */
 		B50B14E529AB7E5D006DDE28 /* Memoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoria.swift; sourceTree = "<group>"; };
-		B50B14E729AB7E98006DDE28 /* MemoriaData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoriaData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B52E868D298BCE6A0072F9E2 /* Memoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52E8690298BCE6A0072F9E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B52E8692298BCE6A0072F9E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,7 +163,6 @@
 		B504828A298E4FFE00011316 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B504828F298E8ADA00011316 /* Repositories */,
 				B504828E298E8AD200011316 /* CoreData */,
 			);
 			path = Data;
@@ -183,18 +179,10 @@
 		B504828E298E8AD200011316 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				B50B14E729AB7E98006DDE28 /* MemoriaData+CoreDataClass.swift */,
 				B54DB0DD29A3CB1B00F1BDBD /* CoreDataManager.swift */,
 				B52E8699298BCE6A0072F9E2 /* MemoriaMemoriaApp.xcdatamodeld */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		B504828F298E8ADA00011316 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		B5048299298FDA4200011316 /* Utils */ = {
@@ -542,7 +530,6 @@
 				B56A2BD329961E8600829804 /* MemoriaCell.swift in Sources */,
 				B5488A4C299F6A69001AF114 /* CalendarViewController.swift in Sources */,
 				B5488A48299F5B72001AF114 /* ProfileViewModel.swift in Sources */,
-				B50B14E929AB7E98006DDE28 /* MemoriaData+CoreDataClass.swift in Sources */,
 				B52E86F5298E42F20072F9E2 /* SettingCell.swift in Sources */,
 				B5471D6E2997E82800838140 /* CalendarCell.swift in Sources */,
 				B52E86CA298BCF220072F9E2 /* UIColor+extension.swift in Sources */,
@@ -578,7 +565,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52E86B5298BCE6B0072F9E2 /* MemoriaUITests.swift in Sources */,
-				B52E86B7298BCE6B0072F9E2 /* MemoriaUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

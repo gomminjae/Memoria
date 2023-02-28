@@ -8,6 +8,11 @@
 import Foundation
 import CoreData
 
+protocol CoreDataManagerType {
+    func saveContext()
+    func create(newMemoria: Memoria) -> (Bool, Error?)
+    func delete(id: UUID) -> (Bool, Error?)
+}
 
 class CoreDataManager: NSObject {
     
