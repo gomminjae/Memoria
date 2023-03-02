@@ -15,13 +15,12 @@ class CalendarView: UICollectionReusableView {
     let days = ["MON","TUE","WED","THU","FRI","SAT","SUN"]
     let months = ["January","February","March", "April","May","June","July","August","September","October","November","December"]
     private var disposeBag = DisposeBag()
-    
     var currentMonth = 1
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .offWhite
+        monthLabel.text = months[currentMonth]
         setupView()
         bindRx()
     }
@@ -59,18 +58,22 @@ class CalendarView: UICollectionReusableView {
             $0.trailing.equalTo(nextButton.snp.leading)
             $0.centerY.equalTo(baseView)
         }
-        
         addSubview(datePageCollectionView)
         datePageCollectionView.snp.makeConstraints {
             $0.top.equalTo(baseView.snp.bottom)
             $0.leading.trailing.equalTo(self)
             $0.bottom.equalTo(self)
         }
+    }
+    
+    private func setupDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: Date())
         
     }
     
     private func bindRx() {
-        
         
         Observable.of(days)
             .bind(to: datePageCollectionView.rx.items(cellIdentifier: CalendarCell.reusableIdentifier,cellType: CalendarCell.self)) { row,model,cell in
@@ -78,24 +81,27 @@ class CalendarView: UICollectionReusableView {
             }
             .disposed(by: disposeBag)
         
-        
-
-        
         previousButton.rx.tap
             .bind { [self] in
-                currentMonth -= 1
+                if currentMonth - 1 < 0 {
+                    currentMonth = 11
+                } else {
+                    currentMonth -= 1
+                }
                 self.monthLabel.text = months[currentMonth]
             }
             .disposed(by: disposeBag)
         
         nextButton.rx.tap
             .bind { [self] in
-                currentMonth += 1
+                if currentMonth + 1 > 11 {
+                    currentMonth = 1
+                } else {
+                    currentMonth += 1
+                }
                 self.monthLabel.text = months[currentMonth]
             }
             .disposed(by: disposeBag)
-        
-       
     }
     
     
@@ -110,7 +116,7 @@ class CalendarView: UICollectionReusableView {
         let label = UILabel()
         label.clipsToBounds = true
         label.layer.cornerRadius = 20
-        label.text = "December"
+        //label.text = "December"
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.backgroundColor = .systemYellow
         label.textAlignment = .center
