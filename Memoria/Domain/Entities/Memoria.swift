@@ -14,4 +14,9 @@ struct Memoria {
     let content: String
     //let data: Date
     //let id: UUID
+    
+    init(title: String, content: String) {
+        self.title = title
+        self.content = content
+    }
 }
