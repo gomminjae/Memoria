@@ -7,9 +7,11 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 protocol CalendarViewModelBindable {
     var memorias: Observable<[Memoria]> { get }
+    var state: Driver<Void> { get set }
 }
 protocol CalendarViewInput {
     
