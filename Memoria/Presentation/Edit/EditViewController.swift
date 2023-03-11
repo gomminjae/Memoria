@@ -27,6 +27,8 @@ class EditViewController: BaseViewController {
         baseView.addSubview(titleLabel)
         baseView.addSubview(cancelButton)
         baseView.addSubview(completeButton)
+        baseView.addSubview(titleTextField)
+        baseView.addSubview(contentTextField)
     }
     
     override func configureLayout() {
@@ -46,6 +48,18 @@ class EditViewController: BaseViewController {
             $0.top.equalTo(titleLabel.snp.top)
             $0.trailing.equalTo(view).inset(20)
         }
+        
+        titleTextField.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
+            $0.leading.equalTo(baseView).inset(30)
+            $0.trailing.equalTo(baseView).inset(50)
+        }
+        contentTextField.snp.makeConstraints {
+            $0.top.equalTo(titleTextField.snp.bottom).offset(40)
+            $0.leading.equalTo(titleTextField)
+            $0.trailing.equalTo(titleTextField)
+        }
+        
         
         completeButton.snp.makeConstraints {
             $0.bottom.equalTo(baseView).inset(40)
@@ -97,6 +111,20 @@ class EditViewController: BaseViewController {
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .systemYellow
         return button
+    }()
+    
+    let titleTextField: UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "Title"
+        //tf.backgroundColor = .gray
+        tf.textColor = .black
+        return tf
+    }()
+    
+    let contentTextField: UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "Content"
+        return tf
     }()
     
     

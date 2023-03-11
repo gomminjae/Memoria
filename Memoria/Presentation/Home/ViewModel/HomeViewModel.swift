@@ -14,16 +14,16 @@ protocol ViewModelType {
     associatedtype Output
     
     var disposeBag: DisposeBag { get set }
-    var input: Input
-    var output: Output
+    var input: Input { get  set }
+    var output: Output { get set }
     
     func transform(input: Input) -> Output
 }
 
-class HomeViewModel: ViewModelType {
+class HomeViewModel {
     
-    var input: Input
-    var output: Output
+//    var input: Input
+//    var output: Output
     
     
     struct Input {
@@ -49,7 +49,8 @@ class HomeViewModel: ViewModelType {
         Memoria(title: "Hello world!", content: "Let's Swift🍎"),
         Memoria(title: "Hello world!", content: "Let's Swift🍎"),
     ])
-    init() {}
+    init() {
+    }
     
     func transform(input: Input) -> Output {
         return Output()
