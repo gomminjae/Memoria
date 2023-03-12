@@ -14,17 +14,13 @@ protocol ViewModelType {
     associatedtype Output
     
     var disposeBag: DisposeBag { get set }
-    var input: Input { get  set }
-    var output: Output { get set }
-    
     func transform(input: Input) -> Output
 }
 
-class HomeViewModel {
+class HomeViewModel: ViewModelType {
     
-//    var input: Input
-//    var output: Output
-    
+    typealias input = Input
+    typealias output = Output
     
     struct Input {
         var memorias: Observable<[Memoria]>

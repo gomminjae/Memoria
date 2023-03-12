@@ -82,6 +82,30 @@ class CoreDataManager: NSObject {
         }
     }
     
+    func update(updated: Memoria) -> (Bool, Error?) {
+        let managedContext = CoreDataManager.shared.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "MemoriaData")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let fetchResult = try managedContext.fetch(fetchRequest).first
+            if let object = fetchRequest as? NSManagedObject {
+                object.setValue(updated.title, forKey: "title")
+                object.setValue(updated.content, forKey: "content")
+            }
+            
+            do {
+                try managedContext.save()
+                return (true,nil)
+            } catch let error as NSError {
+                return (false,error)
+            }
+        } catch let error as NSError {
+            return (false,error)
+        }
+    }
+    
+    
     
     
 }
